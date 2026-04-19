@@ -39,7 +39,7 @@ public class Theme {
             case "RUNNING":    return GREEN;
             case "READY":      return ACCENT;
             case "WAITING":    return YELLOW;
-            case "DONE":       return new Color(0x666688);
+            case "DONE":       return RED;
             case "TERMINATED": return RED;
             default:           return TEXT2;
         }

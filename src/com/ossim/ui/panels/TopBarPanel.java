@@ -14,7 +14,6 @@ public class TopBarPanel extends JPanel {
     public interface TopBarListener {
         void onStart();
         void onStep();
-        void onReset();
         void onConfigChanged();
     }
 
@@ -29,8 +28,6 @@ public class TopBarPanel extends JPanel {
     private JLabel tqLabel, tqSpin, burstLabel, burstSpin;
     public  UIUtils.OutlinedButton startBtn;
     public  UIUtils.OutlinedButton stepBtn;
-    public  UIUtils.OutlinedButton resetBtn;
-
     private boolean started = false;
 
     public TopBarPanel(SimEngine engine, TopBarListener listener) {
@@ -38,8 +35,9 @@ public class TopBarPanel extends JPanel {
         this.listener = listener;
         setBackground(Theme.BG2);
         setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, Theme.BORDER));
+        // Fixed height removed to prevent cutoff
         setLayout(new BorderLayout());
-        setPreferredSize(new Dimension(0, 56));
+        setBorder(BorderFactory.createEmptyBorder(6, 10, 6, 10)); // Add some padding
         build();
     }
 
@@ -89,7 +87,7 @@ public class TopBarPanel extends JPanel {
         sep(left);
 
         // Cores
-        left.add(lbl("CPU Cores (max 16):"));
+        left.add(lbl("CPU Cores:"));
         coreSpinner = UIUtils.darkSpinner(4, 1, 16);
         coreSpinner.setPreferredSize(new Dimension(62, 28));
         coreSpinner.addChangeListener(e -> applyConfig());
@@ -113,24 +111,19 @@ public class TopBarPanel extends JPanel {
         burstSpinner.addChangeListener(e -> applyConfig());
         left.add(burstSpinner);
 
-        // Action buttons (right-aligned cluster, like reference UI)
+        // Action buttons (right-aligned)
         JPanel right = new JPanel(new FlowLayout(FlowLayout.RIGHT, 8, 10));
         right.setOpaque(false);
 
-        startBtn = UIUtils.makeButton("\u25B6  Start", Theme.ACCENT, Theme.ACCENT);
-        startBtn.setPreferredSize(new Dimension(112, 34));
+        startBtn = UIUtils.makeButton("Start", Theme.ACCENT, Theme.ACCENT);
+        startBtn.setPreferredSize(new Dimension(80, 34));
         startBtn.addActionListener(e -> { toggleStart(); listener.onStart(); });
         right.add(startBtn);
 
-        stepBtn = UIUtils.makeButton("\u23ED  Step", Theme.BORDER2, Theme.TEXT);
-        stepBtn.setPreferredSize(new Dimension(104, 34));
+        stepBtn = UIUtils.makeButton("Step", Theme.BORDER2, Theme.TEXT);
+        stepBtn.setPreferredSize(new Dimension(80, 34));
         stepBtn.addActionListener(e -> listener.onStep());
         right.add(stepBtn);
-
-        resetBtn = UIUtils.makeButton("\u21BA  Reset", Theme.RED, Theme.RED);
-        resetBtn.setPreferredSize(new Dimension(108, 34));
-        resetBtn.addActionListener(e -> { resetStartState(); listener.onReset(); });
-        right.add(resetBtn);
 
         add(left, BorderLayout.CENTER);
         add(right, BorderLayout.EAST);
@@ -139,13 +132,15 @@ public class TopBarPanel extends JPanel {
         updateVisibility();
     }
 
+
+
     private void toggleStart() {
         started = !started;
         if (started) {
-            startBtn.setText("\u23F8  Pause");
+            startBtn.setText("Pause");
             startBtn.setAccent(Theme.GREEN, new Color(0x0A0A0F));
         } else {
-            startBtn.setText("\u25B6  Start");
+            startBtn.setText("Start");
             startBtn.setAccent(Theme.ACCENT, Theme.ACCENT);
         }
         repaint();
@@ -153,7 +148,7 @@ public class TopBarPanel extends JPanel {
 
     public void resetStartState() {
         started = false;
-        startBtn.setText("\u25B6  Start");
+        startBtn.setText("Start");
         startBtn.setAccent(Theme.ACCENT, Theme.ACCENT);
         repaint();
     }
@@ -182,10 +177,13 @@ public class TopBarPanel extends JPanel {
     }
 
     private void updateVisibility() {
-        boolean isRR     = algoCombo.getSelectedIndex() == 1;
-        boolean isManual = manualBtn.isSelected();
+        boolean isRR       = algoCombo.getSelectedIndex() == 1;
+        boolean isPriority = algoCombo.getSelectedIndex() == 3;
+        boolean isManual   = manualBtn.isSelected();
         tqLabel.setVisible(isRR);    tqSpinner.setVisible(isRR);
-        burstLabel.setVisible(isManual); burstSpinner.setVisible(isManual);
+        // Burst time not relevant for Priority scheduling
+        boolean showBurst  = isManual && !isPriority;
+        burstLabel.setVisible(showBurst); burstSpinner.setVisible(showBurst);
     }
 
     private JLabel lbl(String t) {

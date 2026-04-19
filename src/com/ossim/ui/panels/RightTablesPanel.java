@@ -39,35 +39,67 @@ public class RightTablesPanel extends JPanel {
     private void build() {
         // ---- Gantt chart (top, larger + time ruler) ----
         ganttPanel = new GanttPanel();
-        JPanel ganttWrap = wrapPanel("\u25C7 Gantt Chart", ganttPanel);
+        JPanel ganttWrap = wrapPanel("Gantt Chart", ganttPanel);
         ganttWrap.setPreferredSize(new Dimension(0, 182));
         ganttWrap.setMinimumSize(new Dimension(0, 148));
 
         // ---- Tabbed thread tables ----
         JTabbedPane tabs = new JTabbedPane(JTabbedPane.TOP, JTabbedPane.SCROLL_TAB_LAYOUT);
         tabs.setBackground(Theme.BG2);
-        tabs.setForeground(Theme.TEXT2);
-        tabs.setFont(Theme.LABEL_SM);
+        tabs.setForeground(Theme.TEXT);
+        tabs.setFont(new Font("Tahoma", Font.BOLD, 12));
+        tabs.setUI(new javax.swing.plaf.basic.BasicTabbedPaneUI() {
+            @Override protected void installDefaults() {
+                super.installDefaults();
+                highlight     = Theme.BG2;
+                lightHighlight = Theme.BORDER2;
+                shadow        = Theme.BORDER;
+                darkShadow    = Theme.BG;
+                focus         = Theme.ACCENT;
+            }
+            @Override protected void paintTabBackground(Graphics g, int tabPlacement,
+                    int tabIndex, int x, int y, int w, int h, boolean isSelected) {
+                g.setColor(isSelected ? new Color(0x1A1A2E) : new Color(0x0D0D18));
+                g.fillRect(x, y, w, h);
+            }
+            @Override protected void paintTabBorder(Graphics g, int tabPlacement,
+                    int tabIndex, int x, int y, int w, int h, boolean isSelected) {
+                g.setColor(isSelected ? Theme.ACCENT : Theme.BORDER2);
+                // Bottom line for selected, subtle outline for others
+                if (isSelected) {
+                    g.fillRect(x, y + h - 2, w, 2);
+                } else {
+                    g.drawRect(x, y, w - 1, h - 1);
+                }
+            }
+            @Override protected void paintContentBorder(Graphics g, int tabPlacement, int selectedIndex) {
+                // Suppress default ugly border
+            }
+            @Override protected int getTabLabelShiftX(int tabPlacement, int tabIndex, boolean selected) { return 0; }
+            @Override protected int getTabLabelShiftY(int tabPlacement, int tabIndex, boolean selected) { return 0; }
+        });
+        // Force tab text color by overriding the UI foreground per tab
+        tabs.addChangeListener(e -> tabs.repaint());
 
         // Tab 1: Thread Details (compact like reference UI)
         String[] detailCols = {"PID", "TID", "Algo", "Burst", "TQ", "Pri", "Rem", "Sync", "Mem"};
         detailModel = makeModel(detailCols);
         detailTable = makeTable(detailModel, true);
-        setColumnWidths(detailTable, 48, 52, 42, 44, 36, 36, 44, 72, 52);
+        setColumnWidths(detailTable, 45, 50, 48, 48, 40, 40, 40, 88, 55);
         tabs.addTab("Thread Details", UIUtils.darkScroll(detailTable));
 
-        // Tab 2: Timing (wait + turnaround + start/finish times)
-        String[] timingCols = {"PID", "TID", "Status", "Wait", "Turnaround", "Start", "Finish"};
+        // Tab 2: Timing (arrival + wait + turnaround + finish times)
+        String[] timingCols = {"PID", "TID", "Status", "Arrival", "Wait", "Turnaround", "Finish"};
         timingModel = makeModel(timingCols);
         timingTable = makeTable(timingModel, false);
-        setColumnWidths(timingTable, 48, 52, 72, 44, 72, 52, 52);
+        setColumnWidths(timingTable, 45, 50, 76, 65, 55, 84, 60);
         tabs.addTab("Timing", UIUtils.darkScroll(timingTable));
 
         // Tab 3: Thread status (core + kernel + status)
         String[] statusCols = {"PID", "TID", "Core", "Kernel", "Status"};
         statusModel = makeModel(statusCols);
         statusTable = makeTable(statusModel, false);
-        setColumnWidths(statusTable, 48, 52, 56, 88, 72);
+        setColumnWidths(statusTable, 45, 50, 60, 96, 76);
         tabs.addTab("Thread Status", UIUtils.darkScroll(statusTable));
 
         // Tab 4: Kernel thread map
@@ -253,11 +285,24 @@ public class RightTablesPanel extends JPanel {
         t.setRowHeight(24);
         t.setSelectionBackground(Theme.withAlpha(Theme.ACCENT, 40));
         t.setSelectionForeground(Theme.TEXT);
-        t.getTableHeader().setBackground(Theme.BG3);
-        t.getTableHeader().setForeground(Theme.TEXT2);
-        t.getTableHeader().setFont(Theme.HEAD_XS);
-        t.getTableHeader().setReorderingAllowed(false);
-        t.getTableHeader().setBorder(new MatteBorder(0, 0, 1, 0, Theme.BORDER));
+        // Themed table header — rich dark bg with bold text
+        JTableHeader header = t.getTableHeader();
+        header.setDefaultRenderer(new DefaultTableCellRenderer() {
+            @Override public Component getTableCellRendererComponent(
+                    JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                JLabel lbl = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+                lbl.setBackground(new Color(0x1A1A2E));  // rich dark navy
+                lbl.setForeground(Theme.TEXT);
+                lbl.setFont(Theme.MONO_BOLD);
+                lbl.setBorder(BorderFactory.createCompoundBorder(
+                    BorderFactory.createMatteBorder(0, 0, 2, 1, Theme.BORDER2),
+                    BorderFactory.createEmptyBorder(4, 6, 4, 6)
+                ));
+                lbl.setOpaque(true);
+                return lbl;
+            }
+        });
+        header.setReorderingAllowed(false);
         t.setAutoResizeMode(hScroll ? JTable.AUTO_RESIZE_OFF : JTable.AUTO_RESIZE_ALL_COLUMNS);
         return t;
     }
@@ -309,7 +354,11 @@ public class RightTablesPanel extends JPanel {
                 super.getTableCellRendererComponent(t, v, sel, foc, row, col);
                 setFont(Theme.MONO_BOLD);
                 String val = v != null ? v.toString() : "";
-                setForeground(Theme.statusColor(val));
+                if ("Running".equalsIgnoreCase(val)) {
+                    setForeground(Theme.statusColor(val));
+                } else {
+                    setForeground(Theme.TEXT);
+                }
                 setBackground(row % 2 == 0 ? Theme.BG2 : Theme.BG3);
                 if (sel) setBackground(Theme.withAlpha(Theme.ACCENT, 35));
                 return this;
@@ -323,9 +372,10 @@ public class RightTablesPanel extends JPanel {
             String sync = "-";
             if (t.getStatus() == ThreadStatus.WAITING)
                 sync = t.getSyncStatus() != null && !"-".equals(t.getSyncStatus()) ? t.getSyncStatus() : "Waiting";
+            String priorityStr = algo == SchedulingAlgo.PRIORITY ? String.valueOf(t.getPriority()) : "-";
             detailModel.addRow(new Object[]{
                 t.getPid(), t.getTid(), algoShort,
-                t.getBurstTime(), tq, t.getPriority(),
+                t.getBurstTime(), tq, priorityStr,
                 t.getRemainingTime(), sync,
                 t.getMemoryMB() + "MB"
             });
@@ -338,9 +388,9 @@ public class RightTablesPanel extends JPanel {
             timingModel.addRow(new Object[]{
                 t.getPid(), t.getTid(),
                 statusDisplay(t),
+                t.getStartTick() < 0 ? "\u2014" : String.valueOf(t.getStartTick()),
                 t.getWaitTime(),
                 t.getTurnaroundTime(),
-                t.getStartTick() < 0 ? "\u2014" : String.valueOf(t.getStartTick()),
                 t.getFinishTick() < 0 ? "\u2014" : String.valueOf(t.getFinishTick())
             });
         }

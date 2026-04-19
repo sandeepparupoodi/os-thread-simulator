@@ -16,6 +16,7 @@ public class ProcessPanel extends JPanel {
         void onAddProcess();
         void onAddThread(String pid);
         void onTerminate(String pid);
+        void onReset();
     }
 
     private final SimEngine engine;
@@ -37,7 +38,7 @@ public class ProcessPanel extends JPanel {
         JPanel header = new JPanel(new BorderLayout());
         header.setBackground(Theme.BG2);
         header.setBorder(new MatteBorder(0, 0, 1, 0, Theme.BORDER));
-        header.add(UIUtils.sectionTitle("\u25C7 Processes"), BorderLayout.CENTER);
+        header.add(UIUtils.sectionTitle("Processes"), BorderLayout.CENTER);
         add(header, BorderLayout.NORTH);
 
         listPanel = new JPanel();
@@ -49,14 +50,20 @@ public class ProcessPanel extends JPanel {
         scroll.setBorder(BorderFactory.createEmptyBorder());
         add(scroll, BorderLayout.CENTER);
 
-        JButton addBtn = UIUtils.makeButton("+  Add Process", Theme.ACCENT, Theme.ACCENT);
+        JButton addBtn = UIUtils.makeButton("+ Add Process", Theme.ACCENT, Theme.ACCENT);
         addBtn.setPreferredSize(new Dimension(220, 34));
         addBtn.setFont(Theme.HEAD_SM);
         addBtn.addActionListener(e -> { if (listener != null) listener.onAddProcess(); });
-        JPanel btnPanel = new JPanel(new BorderLayout());
+
+        UIUtils.OutlinedButton resetBtn = UIUtils.makeButton("Reset", Theme.RED, Theme.RED);
+        resetBtn.setPreferredSize(new Dimension(220, 32));
+        resetBtn.addActionListener(e -> { if (listener != null) listener.onReset(); });
+
+        JPanel btnPanel = new JPanel(new BorderLayout(0, 4));
         btnPanel.setBackground(Theme.BG2);
         btnPanel.setBorder(new MatteBorder(1, 0, 0, 0, Theme.BORDER));
-        btnPanel.add(addBtn);
+        btnPanel.add(resetBtn, BorderLayout.NORTH);
+        btnPanel.add(addBtn, BorderLayout.SOUTH);
         add(btnPanel, BorderLayout.SOUTH);
     }
 
@@ -150,7 +157,7 @@ public class ProcessPanel extends JPanel {
 
         JButton term = UIUtils.makeButton("Kill", Theme.RED, Theme.RED);
         term.setFont(Theme.LABEL_SM);
-        term.setPreferredSize(new Dimension(52, 24));
+        term.setPreferredSize(new Dimension(56, 24));
         term.addActionListener(e -> { if (listener != null) listener.onTerminate(proc.getPid()); });
         actions.add(term);
 

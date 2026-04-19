@@ -29,17 +29,19 @@ public class SyncPanel extends JPanel {
     public SyncPanel(SimEngine engine) {
         this.engine = engine;
         setBackground(Theme.BG3);
-        setBorder(new MatteBorder(0, 0, 1, 0, Theme.BORDER));
+        // Top border 2px thick so the panel visually has breathing room at the top
+        setBorder(new MatteBorder(2, 0, 1, 0, Theme.BORDER2));
         setLayout(new BorderLayout());
-        setPreferredSize(new Dimension(0, 80));
+        setPreferredSize(new Dimension(0, 140));
 
-        titleLabel = new JLabel("  \u25C7 Synchronization — Semaphores");
+        titleLabel = new JLabel("  🔒 Synchronization — Semaphores");
         titleLabel.setFont(Theme.HEAD_XS);
         titleLabel.setForeground(Theme.TEXT2);
-        titleLabel.setBorder(new EmptyBorder(4, 4, 2, 8));
+        titleLabel.setBorder(new EmptyBorder(5, 6, 4, 8));
         add(titleLabel, BorderLayout.NORTH);
 
-        vizArea = new JPanel(new FlowLayout(FlowLayout.LEFT, 8, 4));
+        // Simple container — FlowLayout vgap=10 naturally centres chips vertically
+        vizArea = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 10));
         vizArea.setBackground(Theme.BG3);
         add(vizArea, BorderLayout.CENTER);
 
@@ -50,7 +52,7 @@ public class SyncPanel extends JPanel {
 
     public void refresh() {
         boolean useSem = engine.isUseSemaphores();
-        titleLabel.setText("  \u25C7 Synchronization — " + (useSem ? "Semaphores" : "Monitors"));
+        titleLabel.setText("  🔒 Synchronization — " + (useSem ? "Semaphores" : "Monitors"));
 
         vizArea.removeAll();
 
@@ -93,8 +95,8 @@ public class SyncPanel extends JPanel {
             }
         };
         box.setOpaque(false);
-        box.setLayout(new FlowLayout(FlowLayout.LEFT, 8, 4));
-        box.setBorder(new EmptyBorder(2, 6, 2, 6));
+        box.setLayout(new FlowLayout(FlowLayout.CENTER, 8, 4));
+        box.setBorder(new EmptyBorder(5, 6, 5, 6)); // Increased top and bottom pad
 
         JLabel lockIcon = new JLabel(s.isLocked() ? "[lock]" : "[open]");
         lockIcon.setFont(Theme.MONO_SM);

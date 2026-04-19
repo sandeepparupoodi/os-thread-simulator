@@ -20,7 +20,7 @@ public class CoresPanel extends JPanel {
         setBackground(Theme.BG);
         setLayout(new BorderLayout());
 
-        JLabel title = new JLabel("  \u25C7 CPU cores");
+        JLabel title = new JLabel("  CPU Cores");
         title.setFont(Theme.HEAD_SM);
         title.setForeground(Theme.TEXT2);
         title.setBorder(new EmptyBorder(5, 4, 3, 0));

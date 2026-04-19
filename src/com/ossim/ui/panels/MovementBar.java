@@ -11,7 +11,7 @@ import java.util.List;
 
 public class MovementBar extends JPanel {
 
-    private static final int MAX_VISIBLE = 12;
+    private static final int MAX_VISIBLE = 30;
     private final List<MoveEvent> recentEvents = new ArrayList<>();
     private JPanel eventContainer;
 
@@ -19,9 +19,9 @@ public class MovementBar extends JPanel {
         setBackground(Theme.BG2);
         setBorder(new MatteBorder(0, 0, 1, 0, Theme.BORDER));
         setLayout(new BorderLayout());
-        setPreferredSize(new Dimension(0, 44));
+        setPreferredSize(new Dimension(0, 100));
 
-        JLabel label = new JLabel("  \u25B8 Thread movement:");
+        JLabel label = new JLabel("  Thread Movement:");
         label.setFont(Theme.HEAD_SM);
         label.setForeground(Theme.ACCENT);
         label.setBorder(new EmptyBorder(0, 4, 0, 8));

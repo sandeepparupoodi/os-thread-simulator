@@ -18,20 +18,20 @@ public class SimProcess {
     private final String pid;
     private final Color  color;
     private final List<SimThread> threads;
+    private int threadCounter = 1;
 
     public SimProcess(SchedulingAlgo algo, int defaultBurst, boolean autoConfig) {
         this.pid     = "P" + (pidCounter++);
         this.color   = PALETTE[colorIdx % PALETTE.length];
         colorIdx++;
         this.threads = new ArrayList<>();
-        // Start with 2 threads by default when process is added
-        addThread(algo, defaultBurst, autoConfig);
+        // Start with 1 thread by default when process is added
         addThread(algo, defaultBurst, autoConfig);
     }
 
     public SimThread addThread(SchedulingAlgo algo, int defaultBurst, boolean autoConfig) {
         int burst = autoConfig ? (3 + (int)(Math.random() * 10)) : defaultBurst;
-        SimThread t = new SimThread(pid, color, burst, algo);
+        SimThread t = new SimThread(pid, color, burst, algo, threadCounter++);
         threads.add(t);
         return t;
     }

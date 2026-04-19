@@ -3,7 +3,7 @@ package com.ossim.model;
 import java.awt.Color;
 
 public class SimThread {
-    private static int tidCounter = 1;
+    // Removed global tidCounter
 
     private final String tid;
     private final String pid;
@@ -24,8 +24,8 @@ public class SimThread {
     private int timeQuantumUsed;
     private SchedulingAlgo algo;
 
-    public SimThread(String pid, Color color, int burstTime, SchedulingAlgo algo) {
-        this.tid = "T" + (tidCounter++);
+    public SimThread(String pid, Color color, int burstTime, SchedulingAlgo algo, int threadIndex) {
+        this.tid = pid + "-T" + threadIndex;
         this.pid = pid;
         this.color = color;
         this.burstTime = burstTime;
@@ -44,7 +44,7 @@ public class SimThread {
         this.algo = algo;
     }
 
-    public static void resetCounter() { tidCounter = 1; }
+    public static void resetCounter() {}
 
     // Getters
     public String getTid() { return tid; }

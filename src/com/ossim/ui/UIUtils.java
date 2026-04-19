@@ -116,10 +116,28 @@ public class UIUtils {
 
     public static JComboBox<String> darkCombo(String[] items) {
         JComboBox<String> cb = new JComboBox<>(items);
+        cb.setUI(new javax.swing.plaf.basic.BasicComboBoxUI() {
+            @Override
+            protected JButton createArrowButton() {
+                JButton btn = new javax.swing.plaf.basic.BasicArrowButton(javax.swing.plaf.basic.BasicArrowButton.SOUTH,
+                        Theme.BG2, Theme.BORDER2, Theme.TEXT2, Theme.BG);
+                btn.setBorder(BorderFactory.createEmptyBorder());
+                return btn;
+            }
+        });
         cb.setBackground(Theme.BG2);
         cb.setForeground(Theme.TEXT);
         cb.setFont(Theme.LABEL);
         cb.setBorder(BorderFactory.createLineBorder(Theme.BORDER2));
+        cb.setRenderer(new DefaultListCellRenderer() {
+            @Override public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+                super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+                setBackground(isSelected ? Theme.BORDER2 : Theme.BG2);
+                setForeground(Theme.TEXT);
+                return this;
+            }
+        });
+        cb.setOpaque(true);
         return cb;
     }
 

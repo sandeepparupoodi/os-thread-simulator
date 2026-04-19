@@ -152,6 +152,12 @@ public class SimEngine {
                 events.add(new MoveEvent(t.getPid(), t.getTid(), "Core " + t.getAssignedCore(), "Done ✓", t.getColor(), clock));
                 t.setAssignedCore(0);
                 t.resetQuantum();
+            } else if (Math.random() < 0.10) {
+                t.setStatus(ThreadStatus.WAITING);
+                t.setSyncStatus("I/O Wait");
+                events.add(new MoveEvent(t.getPid(), t.getTid(), "Core " + t.getAssignedCore(), "Waiting (I/O)", t.getColor(), clock));
+                t.setAssignedCore(0);
+                t.resetQuantum();
             } else if (algo == SchedulingAlgo.ROUND_ROBIN && t.getTimeQuantumUsed() >= timeQuantum) {
                 t.setStatus(ThreadStatus.READY);
                 events.add(new MoveEvent(t.getPid(), t.getTid(), "Core " + t.getAssignedCore(), "Preempted → Ready", t.getColor(), clock));
@@ -206,7 +212,10 @@ public class SimEngine {
         }
 
         // 5. Remaining ready threads wait
-        all.stream().filter(t -> t.getStatus() == ThreadStatus.READY).forEach(SimThread::incrementWaitTime);
+        all.stream().filter(t -> t.getStatus() == ThreadStatus.READY).forEach(t -> {
+            t.incrementWaitTime();
+            t.incrementTurnaround();
+        });
 
         clock++;
         moveHistory.addAll(events);

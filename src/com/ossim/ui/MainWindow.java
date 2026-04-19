@@ -33,8 +33,9 @@ public class MainWindow extends JFrame {
     public MainWindow() {
         super("OS Thread Simulator");
         UIUtils.applyDarkLook();
+        setUndecorated(true);           // remove OS native title bar
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(1460, 880);
+        setSize(1460, 900);
         setMinimumSize(new Dimension(1240, 700));
         setLocationRelativeTo(null);
         getContentPane().setBackground(Theme.BG);
@@ -46,14 +47,22 @@ public class MainWindow extends JFrame {
     private void build() {
         setLayout(new BorderLayout());
 
-        // ---- TOP BAR ----
+        // ---- CUSTOM TITLE BAR ----
+        CustomTitleBar titleBar = new CustomTitleBar(this);
+
+        // ---- CONFIG BAR ----
         topBar = new TopBarPanel(engine, new TopBarPanel.TopBarListener() {
             @Override public void onStart()         { handleStartPause(); }
             @Override public void onStep()          { doStep(); }
-            @Override public void onReset()         { doReset(); }
             @Override public void onConfigChanged() { refresh(); }
         });
-        add(topBar, BorderLayout.NORTH);
+
+        // Stack title bar + config bar in a single NORTH wrapper
+        JPanel northWrapper = new JPanel(new BorderLayout());
+        northWrapper.setBackground(Theme.BG);
+        northWrapper.add(titleBar, BorderLayout.NORTH);
+        northWrapper.add(topBar,   BorderLayout.CENTER);
+        add(northWrapper, BorderLayout.NORTH);
 
         // ---- STATUS BAR ----
         statusBar = new StatusBar(engine);
@@ -65,6 +74,7 @@ public class MainWindow extends JFrame {
             @Override public void onAddProcess()          { engine.addProcess(); refresh(); }
             @Override public void onAddThread(String pid) { engine.addThread(pid); refresh(); }
             @Override public void onTerminate(String pid) { engine.terminateProcess(pid); refresh(); }
+            @Override public void onReset()               { doReset(); }
         });
 
         // ---- CENTER ----
@@ -82,10 +92,10 @@ public class MainWindow extends JFrame {
         syncAndCores.add(coresPanel, BorderLayout.CENTER);
         centerPanel.add(syncAndCores, BorderLayout.CENTER);
 
-        // ---- RIGHT PANEL (reference width ~320–360px) ----
+        // ---- RIGHT PANEL (wider) ----
         rightTables = new RightTablesPanel(engine);
         rightTables.setMinimumSize(new Dimension(300, 0));
-        rightTables.setPreferredSize(new Dimension(340, 0));
+        rightTables.setPreferredSize(new Dimension(500, 0));
 
         // ---- SPLITS ----
         leftSplit = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, processPanel, centerPanel);
@@ -105,7 +115,7 @@ public class MainWindow extends JFrame {
                 int w = mainSplit.getWidth();
                 if (w <= 0) return;
                 int wantRight = rightTables.getPreferredSize().width;
-                int maxRight = Math.max(280, w - 400);
+                int maxRight = Math.max(480, w - 400);
                 int rightW = Math.min(wantRight, maxRight);
                 int loc = w - rightW - mainSplit.getDividerSize();
                 if (loc > 200 && loc < w - 40) mainSplit.setDividerLocation(loc);
