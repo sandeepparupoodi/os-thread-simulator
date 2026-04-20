@@ -31,7 +31,7 @@ public class MainWindow extends JFrame {
     private static final int AUTO_DELAY = 1000;
 
     public MainWindow() {
-        super("OS Thread Simulator");
+        super("RTOS ThreadVision (Thread Simulator)");
         UIUtils.applyDarkLook();
         setUndecorated(true);           // remove OS native title bar
         setDefaultCloseOperation(EXIT_ON_CLOSE);

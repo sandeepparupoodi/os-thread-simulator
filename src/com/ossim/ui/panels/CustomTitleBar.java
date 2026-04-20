@@ -40,7 +40,7 @@ public class CustomTitleBar extends JPanel {
         logo.setForeground(Theme.ACCENT);
         left.add(logo);
 
-        JLabel title = new JLabel("OS Thread Simulator");
+        JLabel title = new JLabel("RTOS ThreadVision (Thread Simulator)");
         title.setFont(new Font("Tahoma", Font.BOLD, 13));
         title.setForeground(Theme.TEXT);
         left.add(title);
