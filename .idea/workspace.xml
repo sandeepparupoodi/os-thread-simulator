@@ -5,106 +5,108 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d3698d1-cdbc-4581-8ba8-9f869b1a557c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/out/com/ossim/ui/UIUtils$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/com/ossim/ui/UIUtils$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/CustomTitleBar$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/CustomTitleBar$TitleBarBtn.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/CustomTitleBar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/model/KernelThread.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/model/MoveEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/model/SchedulingAlgo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/model/Semaphore.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/model/SimProcess.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/model/SimThread.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/model/ThreadModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/model/ThreadStatus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/scheduler/SimEngine$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/scheduler/SimEngine$SimListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/scheduler/SimEngine.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/MainWindow$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/MainWindow$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/MainWindow$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/MainWindow$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/MainWindow.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/Theme.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/UIUtils$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/UIUtils$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/UIUtils$OutlinedButton.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/UIUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/CoresPanel$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/CoresPanel$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/CoresPanel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/CustomTitleBar$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/CustomTitleBar$TitleBarBtn.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/CustomTitleBar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/MovementBar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/ProcessPanel$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/ProcessPanel$ProcessPanelListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/ProcessPanel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/RightTablesPanel$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/RightTablesPanel$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/RightTablesPanel$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/RightTablesPanel$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/RightTablesPanel$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/RightTablesPanel$GanttEntry.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/RightTablesPanel$GanttPanel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/RightTablesPanel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/StatusBar$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/StatusBar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/SyncPanel$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/SyncPanel$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/SyncPanel$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/SyncPanel$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/SyncPanel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/TopBarPanel$TopBarListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/TopBarPanel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ossim/ui/panels/CustomTitleBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OSThreadSim.jar" beforeDir="false" afterPath="$PROJECT_DIR$/OSThreadSim.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/model/SimProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/model/SimProcess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/model/SimThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/model/SimThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/scheduler/SimEngine$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/scheduler/SimEngine$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/scheduler/SimEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/scheduler/SimEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/MainWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/MainWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/MainWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/MainWindow$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/MainWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/MainWindow$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/MainWindow$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/MainWindow$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/MainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/MainWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/Theme.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/Theme.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/UIUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/UIUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/CoresPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/CoresPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/MovementBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/MovementBar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/ProcessPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/ProcessPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/ProcessPanel$ProcessPanelListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/ProcessPanel$ProcessPanelListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/ProcessPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/ProcessPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$GanttEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$GanttEntry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$GanttPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$GanttPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/SyncPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/SyncPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/SyncPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/SyncPanel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/SyncPanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/SyncPanel$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/SyncPanel$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/SyncPanel$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/SyncPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/SyncPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/TopBarPanel$TopBarListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/TopBarPanel$TopBarListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/TopBarPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/com/ossim/ui/panels/TopBarPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ossim/model/SimProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ossim/model/SimProcess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ossim/model/SimThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ossim/model/SimThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ossim/scheduler/SimEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ossim/scheduler/SimEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ossim/ui/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ossim/ui/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ossim/ui/Theme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ossim/ui/Theme.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ossim/ui/UIUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ossim/ui/UIUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ossim/ui/panels/CoresPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ossim/ui/panels/CoresPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ossim/ui/panels/MovementBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ossim/ui/panels/MovementBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ossim/ui/panels/ProcessPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ossim/ui/panels/ProcessPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ossim/ui/panels/RightTablesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ossim/ui/panels/RightTablesPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ossim/ui/panels/SyncPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ossim/ui/panels/SyncPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ossim/ui/panels/TopBarPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ossim/ui/panels/TopBarPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OSThreadSim.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/model/KernelThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/model/MoveEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/model/SchedulingAlgo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/model/Semaphore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/model/SimProcess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/model/SimThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/model/ThreadModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/model/ThreadStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/scheduler/SimEngine$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/scheduler/SimEngine$SimListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/scheduler/SimEngine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/MainWindow$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/MainWindow$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/MainWindow$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/MainWindow$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/MainWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/Theme.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/UIUtils$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/UIUtils$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/UIUtils$OutlinedButton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/UIUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/CoresPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/CoresPanel$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/CoresPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/CustomTitleBar$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/CustomTitleBar$TitleBarBtn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/CustomTitleBar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/MovementBar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/ProcessPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/ProcessPanel$ProcessPanelListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/ProcessPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$GanttEntry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel$GanttPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/RightTablesPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/StatusBar$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/StatusBar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/SyncPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/SyncPanel$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/SyncPanel$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/SyncPanel$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/SyncPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/TopBarPanel$TopBarListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/com/ossim/ui/panels/TopBarPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/model/KernelThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/model/MoveEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/model/SchedulingAlgo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/model/Semaphore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/model/SimProcess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/model/SimThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/model/ThreadModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/model/ThreadStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/scheduler/SimEngine$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/scheduler/SimEngine$SimListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/scheduler/SimEngine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/MainWindow$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/MainWindow$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/MainWindow$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/MainWindow$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/MainWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/Theme.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/UIUtils$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/UIUtils$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/UIUtils$OutlinedButton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/UIUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/CoresPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/CoresPanel$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/CoresPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/CustomTitleBar$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/CustomTitleBar$TitleBarBtn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/CustomTitleBar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/MovementBar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/ProcessPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/ProcessPanel$ProcessPanelListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/ProcessPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/RightTablesPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/RightTablesPanel$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/RightTablesPanel$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/RightTablesPanel$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/RightTablesPanel$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/RightTablesPanel$GanttEntry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/RightTablesPanel$GanttPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/RightTablesPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/StatusBar$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/StatusBar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/SyncPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/SyncPanel$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/SyncPanel$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/SyncPanel$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/SyncPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/TopBarPanel$TopBarListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OSThreadSim/com/ossim/ui/panels/TopBarPanel.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,20 +124,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ossim.Main" />
