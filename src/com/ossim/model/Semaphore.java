@@ -1,17 +1,21 @@
 package com.ossim.model;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Queue;
 
 public class Semaphore {
     private final String name;
+    private final int initialValue;
     private int value;
     private String heldBy;
     private final Queue<String> waitQueue;
 
     public Semaphore(String name, int initialValue) {
         this.name = name;
-        this.value = initialValue;
+        this.initialValue = Math.max(1, initialValue);
+        this.value = this.initialValue;
         this.heldBy = null;
         this.waitQueue = new ArrayDeque<>();
     }
@@ -22,7 +26,9 @@ public class Semaphore {
             heldBy = tid;
             return true;
         }
-        waitQueue.add(tid);
+        if (!waitQueue.contains(tid)) {
+             waitQueue.add(tid);
+}
         return false;
     }
 
