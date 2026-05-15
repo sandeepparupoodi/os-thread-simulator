@@ -30,8 +30,9 @@ public class SimProcess {
     }
 
     public SimThread addThread(SchedulingAlgo algo, int defaultBurst, boolean autoConfig) {
-        int burst = autoConfig ? (3 + (int)(Math.random() * 10)) : defaultBurst;
-        SimThread t = new SimThread(pid, color, burst, algo, threadCounter++);
+        iint burst = autoConfig ? (3 + (int)(Math.random() * 10)) : Math.max(1, defaultBurst);
+        SchedulingAlgo selectedAlgo = (algo == null) ? SchedulingAlgo.FCFS : algo;
+        SimThread t = new SimThread(pid, color, burst, algo, selectedAlgo, threadCounter++);
         threads.add(t);
         return t;
     }
@@ -46,5 +47,8 @@ public class SimProcess {
         return (int) threads.stream()
             .filter(t -> t.getStatus() != ThreadStatus.DONE && t.getStatus() != ThreadStatus.TERMINATED)
             .count();
+    }
+    public boolean isCompleted() {
+        return activeThreadCount() == 0;
     }
 }
